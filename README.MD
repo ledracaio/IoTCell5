@@ -106,37 +106,36 @@ Formato padronizado:
 
 ## 📋 Tabela de Componentes
 
-| Componente | Quant. | Valor | Função |
-|-------------|--------|--------|--------|
-| Arduino Mega 2560 | 1 | — | Microcontrolador principal |
-| Módulo WiFi ESP8266 | 1 | — | Conectividade MQTT |
-| Sensor ultrassônico HC-SR04 | 1 | — | Medição de distância |
-| Display LCD 16x2 | 1 | — | Exibição de contagem e status |
-| LED Verde | 1 | — | Indicação de item detectado |
-| LED Vermelho | 1 | — | Indicação de falha |
-| Buzzer | 1 | — | Alerta sonoro |
-| Botão Reset | 1 | — | Reinicia contagem |
-| Botão Pausa | 1 | — | Pausa alarmes temporariamente |
-| Resistores | 4 | 220Ω | Limitação de corrente |
-| Protoboard | 2 | — | Conexão do circuito |
-| Jumpers | ~20 | — | Conexão do circuito |
+| Componente                       | Quantidade | Valor / Modelo | Função no Circuito                 |
+|----------------------------------|-----------:|----------------|------------------------------------|
+| Arduino MEGA 2560                | 1          | -              | Unidade comunicação USB            |
+| Shield ESP8266                   | 1          | -              | Unidade de controle e MQTT         |
+| Sensor ultrassônico HC-SR04      | 1          | -              | Medição de distância / detecção de itens |
+| Display LCD 16x2 (HD44780)       | 1          | -              | Exibição de dados e mensagens      |
+| LED Verde                        | 1          | 220 Ω resistor | Indicação de funcionamento normal  |
+| LED Vermelho                     | 1          | 220 Ω resistor | Indicação de falha                 |
+| Buzzer                           | 1          | -              | Alerta sonoro                      |
+| Botão Reset                      | 1          | -              | Reinicialização do contador        |
+| Botão Pausar                     | 1          | -              | Pausa dos alertas de falha         |
+| Protoboard                       | 2          | -              | Conexão dos componentes            |
+| Jumpers                          | ~20        | -              | -                                  |
 
 ---
 
-## 🔌 Mapa de Pinos (Arduino Mega)
+## 🔌 Mapa de Pinos
 
-| Componente | Pino | Função |
-|-------------|------|--------|
-| HC-SR04 TRIG | D5 | Saída de trigger |
-| HC-SR04 ECHO | D6 | Entrada de eco |
-| LCD RS | 48 | Controle RS |
-| LCD E | 46 | Enable |
-| LCD D4–D7 | 45, 43, 51, 53 | Dados |
-| LED Verde | 8 | Sinal de item detectado |
-| LED Vermelho | 9 | Alerta de falha |
-| Buzzer | 10 | Alerta sonoro |
-| Botão Reset | 11 | Reset contador |
-| Botão Pausa | 12 | Pausar alerta |
+| Pino ESP8266 (NodeMCU) | GPIO    | Componente Conectado           | Função                                  |
+|------------------------|---------|--------------------------------|-----------------------------------------|
+| D5                     | GPIO14  | Trigger (HC-SR04)              | Emissão do pulso ultrassônico           |
+| D6                     | GPIO12  | Echo (HC-SR04)                 | Recepção do eco                         |
+| D1                     | GPIO5   | LED Verde                      | Indicação de operação normal            |
+| D7                     | GPIO13  | LED Vermelho                   | Indicação de falha                      |
+| D0                     | GPIO16  | Buzzer                         | Alerta sonoro                           |
+| D3                     | GPIO0   | Botão Reset                    | Reinicialização do contador             |
+| D4                     | GPIO2   | Botão Pausar                   | Pausa dos alertas                       |
+| TX / RX                | -       | Serial → Arduino Mega (TX1/RX1)| Comunicação entre placas                |
+| 5V / GND               | -       | Protoboard / Sensores / LEDs   | Alimentação e referência comum          |
+
 
 ---
 
